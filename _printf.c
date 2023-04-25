@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdarg.h> 
+#include "main.h"
+
 
 int _printf(const char *format, ...)
 {
@@ -15,7 +18,7 @@ int prnt = 0;
       switch (*formart)
 	{
 	case 'c':
-	  _putchar(va_arg(list, int));
+	 _putchar(va_arg(list, int));
 	  count++;
 	  break;
 	case 's':
@@ -23,20 +26,19 @@ int prnt = 0;
 	  count++;
 	  break;
 	default:
-	  putchar('%');
-	  putchar(*format);
+	  _putchar('%');
+	  _putchar(*format);
 	  count += 2;
 	  break;
-	
 	}
       format++;
-      {
+    }
 	      else
       }
-      putchar(*format);
+      _putchar(*format);
       count++;
       format++;
-    
+
     }
  va_end(list);
 return (prnt);
