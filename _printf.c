@@ -6,16 +6,16 @@
 int _printf(const char *format, ...)
 {
 va_list list;
-int prnt = 0;
+int count = 0;
 
  va_start(list, format);
 
- while (*formart != '\0')
+ while (*format != '\0')
 {
   if  (*format == '%')
     {
-      formart++;
-      switch (*formart)
+      format++;
+      switch (*format)
 	{
 	case 'c':
 	 _putchar(va_arg(list, int));
@@ -33,7 +33,7 @@ int prnt = 0;
 	}
       format++;
     }
-	      else
+  	else
       }
       _putchar(*format);
       count++;
@@ -41,5 +41,5 @@ int prnt = 0;
 
     }
  va_end(list);
-return (prnt);
+return (count);
 }
