@@ -31,8 +31,8 @@ count += printf("%s", va_arg(list, const char *));
 count++;
 break;
 case 'd':
-_putchar(va_arg (list, float));
-count++
+_putchar(va_arg (list, double));
+count++;
 break;
 default:
 _putchar('%');
