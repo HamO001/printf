@@ -22,8 +22,21 @@ int prnt = 0;
 	  count += printf("%s" , va_arg(list, const char *));
 	  count++;
 	  break;
+	default:
+	  putchar('%');
+	  putchar(*format);
+	  count += 2;
+	  break;
 	
 	}
+      format++;
+      {
+	      else
+      }
+      putchar(*format);
+      count++;
+      format++;
+    
     }
  va_end(list);
 return (prnt);
