@@ -1,20 +1,30 @@
 #include <stdio.h>
 
-int _printf(const char *formart, ...)
+int _printf(const char *format, ...)
 {
-  va_list list;
-  va_list(list, formart);
-  int prnt = 0;
-  while (*formart)
+va_list list;
+int prnt = 0;
+
+ va_start(list, format);
+
+ while (*formart != '\0')
+{
+  if  (*format == '%')
     {
-      printed += *formart == '%' ?
-	(*(++formart) == 'c' ? _putchar(va_arg(list, int)) :
-	 *(formart) == 's' ? printf("%s", va_arg(list, char *)) :
-	 *(format) == 'd' || *(format) == 'i' ? printf("%d", va_arg, int)) ;
-      _putchar('%') + _putchar(*format) ;
-      _putchar(*format);
-      ++format;
+      formart++;
+      switch (*formart)
+	{
+	case 'c':
+	  _putchar(va_arg(list, int));
+	  count++;
+	  break;
+	case 's':
+	  count += printf("%s" , va_arg(list, const char *));
+	  count++;
+	  break;
+	
+	}
     }
-  va_end(args);
-  return (printed);
+ va_end(list);
+return (prnt);
 }
