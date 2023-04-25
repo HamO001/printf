@@ -10,5 +10,11 @@ int _printf(const char *formart, ...)
       printed += *formart == '%' ?
 	(*(++formart) == 'c' ? _putchar(va_arg(list, int)) :
 	 *(formart) == 's' ? printf("%s", va_arg(list, char *)) :
+	 *(format) == 'd' || *(format) == 'i' ? printf("%d", va_arg, int)) ;
+      _putchar('%') + _putchar(*format) ;
+      _putchar(*format);
+      ++format;
     }
+  va_end(args);
+  return (printed);
 }
