@@ -21,7 +21,7 @@ format++;
 switch (*format)
 {
 case 'c':
-putchar(va_arg(list, int));
+_putchar(va_arg(list, int));
 count++;
 break;
 case 's':
@@ -34,15 +34,15 @@ printf("%d", va_arg(list, int));
 count++;
 break;
 default:
-putchar('%');
-putchar(*format);
+_putchar('%');
+_putchar(*format);
 count += 2;
 break;
 }
 }
 else
 {
-putchar(*format);
+_putchar(*format);
 count++;
 }
 format++;
