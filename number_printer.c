@@ -4,15 +4,15 @@
  * print_int - prints an integer with the given base
  * @num: The interger to print
  * @base: The base to use (e.g. 10 for decimal, 16 for hexadecimal)
- * @is_unsigned: Whether the integer is unsigned
+ * @is_unsignedint: Whether the integer is unsigned
  *
- * return: The number of characters printed
+ * Return: The number of characters printed
  */
-int print_int(int num, int base, int is_unsigned)
+int print_int(int num, int base, int is_unsignedint)
 {
 int count = 0;
 
-if (num < 0 && != is_unsigned)
+if (num < 0 && !is_unsignedint)
 {
 _write_char('-');
 num *= -1;
@@ -20,7 +20,7 @@ count++;
 }
 
 if (num / base)
-count += print_int(num / base, base, is_unsigned);
+count += print_int(num / base, base, is_unsignedint);
 
 if (num % base < 10)
 _write_char(num % base + '0');
