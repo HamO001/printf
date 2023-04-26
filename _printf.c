@@ -1,5 +1,5 @@
-#include "main.c"
-#include <atdarg.g>
+#include "main.h"
+#include <stdarg.h>
 
 /**
  * _printf - produces output according to a format.
@@ -25,7 +25,7 @@ printed_chars += _write_char('%');
 else if (*format == 'c')
 printed_chars += _write_char(va_arg(args, int));
 else if (*format == 's')
-printed_chars += _write_char(va_arg(args, char));
+printed_chars += _write_char(va_arg(args, int));
 else
 {
 printed_chars += _write_char('%');
@@ -36,7 +36,7 @@ else
 {
 printed_chars += _write_char(*format);
 }
-format++
+format++;
 }
 va_end(args);
 
