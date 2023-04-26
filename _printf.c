@@ -1,52 +1,44 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include "main.h"
+#include "main.c"
+#include <atdarg.g>
 
 /**
- * _printf - prints charactes, integers and string
- * @format: contains what needs to be printed
- * Return: printed charcters
+ * _printf - produces output according to a format.
+ * @format: character string
+ *
+ * Return: the number of characters printed (excluding the null byte
+ * used to end output to strings)
  */
-
 int _printf(const char *format, ...)
 {
-va_list list;
-int count = 0;
-va_start(list, format);
-while (*format != '\0')
+va_list args;
+int printed_chars = 0;
+va_start(args, format);
+while (*format)
 {
-if  (*format == '%')
+if (*format == '%')
 {
 format++;
-switch (*format)
+if (*format == '\0')
+return (-1);
+if (*format == '%')
+printed_chars += _write_char('%');
+else if (*format == 'c')
+printed_chars += _write_char(va_arg(args, int));
+else if (*format == 's')
+printed_chars += _write_char(va_arg(args, char));
+else
 {
-case 'c':
-_putchar(va_arg(list, int));
-count++;
-break;
-case 's':
-count += printf("%s", va_arg(list, const char *));
-count++;
-break;
-case 'd':
-case 'i':
-printf("%d", va_arg(list, int));
-count++;
-break;
-default:
-_putchar('%');
-_putchar(*format);
-count += 2;
-break;
+printed_chars += _write_char('%');
+printed_chars += _write_char(*format);
 }
 }
 else
 {
-_putchar(*format);
-count++;
+printed_chars += _write_char(*format);
 }
-format++;
+format++
 }
-va_end(list);
-return (count);
+va_end(args);
+
+return (printed_chars);
 }
