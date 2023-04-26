@@ -12,9 +12,7 @@ int _printf(const char *format, ...)
 {
 va_list list;
 int count = 0;
-
 va_start(list, format);
-
 while (*format != '\0')
 {
 if  (*format == '%')
@@ -31,7 +29,7 @@ count += printf("%s", va_arg(list, const char *));
 count++;
 break;
 case 'd':
-_putchar(va_arg (list, double));
+_putchar(va_arg(list, double));
 count++;
 break;
 default:
