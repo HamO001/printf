@@ -21,7 +21,7 @@ format++;
 switch (*format)
 {
 case 'c':
-_putchar(va_arg(list, int));
+putchar(va_arg(list, int));
 count++;
 break;
 case 's':
@@ -29,23 +29,23 @@ count += printf("%s", va_arg(list, const char *));
 count++;
 break;
 case 'd':
-_putchar(va_arg(list, double));
+case 'i':
+printf("%d", va_arg(list, int));
 count++;
 break;
 default:
-_putchar('%');
-_putchar(*format);
+putchar('%');
+putchar(*format);
 count += 2;
 break;
 }
-format++;
 }
 else
 {
-_putchar(*format);
+putchar(*format);
 count++;
-format++;
 }
+format++;
 }
 va_end(list);
 return (count);
