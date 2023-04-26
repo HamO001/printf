@@ -11,7 +11,7 @@
  * @sym: The operator
  * @f: The function associated
  */
-struct typedef struct changed
+typedef struct changed
 {
 	char *sym;
 	int (*f)(va_list);
@@ -20,6 +20,6 @@ struct typedef struct changed
 
 int _putchar(char);
 int _printf(const char *format, ...);
-
+int _return(const char *format, convert my_list[], va_list list);
 
 #endif
