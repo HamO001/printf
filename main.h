@@ -47,6 +47,5 @@ char *rev_string(char *s);
 /* custom data types */
 typedef unsigned int unit;
 typedef unsigned long int ulong;
-typedef unsigned long long int ullong;
 
 #endif

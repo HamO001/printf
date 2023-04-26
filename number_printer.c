@@ -41,7 +41,7 @@ return (count);
  */
 int handle_decimal(va_list args, const char *format)
 {
-int num = va_args(args, int);
+int num = va_arg(args, int);
 
 return (print_int(num, 10, 0));
 }

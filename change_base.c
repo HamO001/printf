@@ -2,22 +2,29 @@
 #include <stdarg.h>
 #include "main.h"
 
-int decimal to binary(int num)
+
+/**
+ * decimal_to_binary - convert decimal number to binary
+ * @num: number to be converted
+ * Return: number converted to binary
+ */
+
+int decimal_to_binary(int num)
 {
+int binary[32];
+int i = 0;
+int j;
 if (num == 0)
 {
 return (0);
 }
-
-int binary[32];
-int i = 0;
 while (num > 0)
 {
 binary[i] = num % 2;
 num /= 2;
 i++;
 }
-for (int j = i; j >= 0; j--)
+for (j = i; j >= 0; j--)
 {
 printf("%d", binary[j]);
 }

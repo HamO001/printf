@@ -29,11 +29,11 @@ while (*src != '\0')
 {
 *dest = *src;
 dest++;
-src;
+src++;
 }
 *dest = '\0';
 
-return (ret);
+return (rest);
 }
 
 /**

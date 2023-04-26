@@ -8,8 +8,8 @@
  */
 int handle_char(va_list args, const char *format)
 {
-char c = var_arg(args, int);
--write_char(c);
+char c = va_arg(args, int);
+_write_char(c);
 return (1);
 }
 
@@ -26,7 +26,7 @@ char *s = va_arg(args, char *);
 if (s == NULL)
 s = "(null)";
 
-write_sring(s);
+_write_string(s);
 
 return (_strlen(s));
 }
@@ -37,7 +37,7 @@ return (_strlen(s));
  * @format: pointer to the format string
  * Return: no of character printed
  */
-int handle_percent(va_list args, cons char *format)
+int handle_percent(va_list args, const char *format)
 {
 (void)args;
 (void)format;
