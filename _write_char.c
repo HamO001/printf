@@ -16,7 +16,7 @@ return (write(1, &c, 1));
  *
  * Return: The number of characters printed
  */
-int_puts(char *str)
+int _puts(char *str)
 {
 int i = 0;
 

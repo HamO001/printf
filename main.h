@@ -7,7 +7,7 @@
 
 int _putchar(char);
 int _printf(const char *format, ...);
-int _write_char(char(char c);
+int _write_char(char c);
 int _puts(char *str);
 int _print_number(int n);
 int _print_binary(unsigned int n);
