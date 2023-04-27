@@ -11,8 +11,8 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int printed_chars, num = 0;
-unsigned int n;
+int printed_chars = 0;
+int num = 0;
 va_start(args, format);
 while (*format)
 {
@@ -34,7 +34,7 @@ printed_chars += _print_number(num);
 }
 else if (*format == 'b')
 {
-n = va_arg(args, unsigned int);
+unsigned int n = va_arg(args, unsigned int);
 printed_chars += _print_binary(n);
 }
 else
@@ -45,9 +45,7 @@ printed_chars += 2;
 }
 }
 else
-{
 printed_chars += _putchar(*format);
-}
 format++;
 }
 va_end(args);
