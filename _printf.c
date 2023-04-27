@@ -45,7 +45,9 @@ printed_chars += 2;
 }
 }
 else
+{
 printed_chars += _putchar(*format);
+}
 format++;
 }
 va_end(args);
